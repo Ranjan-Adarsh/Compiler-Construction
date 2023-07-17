@@ -1,0 +1,13 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_VARIABLE_LIST_H
+#define COMPILER_VARIABLE_LIST_H
+
+#include "ast.h"
+
+VariableListNode *create_variable_list_node();
+
+#endif //COMPILER_VARIABLE_LIST_H

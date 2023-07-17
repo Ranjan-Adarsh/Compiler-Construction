@@ -1,0 +1,13 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_DECLARE_VARIABLE_STATEMENT_H
+#define COMPILER_DECLARE_VARIABLE_STATEMENT_H
+
+#include "ast.h"
+
+DeclareVariableStatementNode *create_declare_variable_statement_node();
+
+#endif //COMPILER_DECLARE_VARIABLE_STATEMENT_H

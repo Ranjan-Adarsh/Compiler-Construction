@@ -1,18 +1,23 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
 #include <sys/times.h>
 #include <time.h>
-#include "grammar/grammar_populator/constructor.h"
-#include "compiler/symbol_table/constructor/symbol_table_constructor.h"
+#include "constructor.h"
+#include "symbol_table_constructor.h"
 #include "parser.h"
 #include "lexer_constructor.h"
 #include "ast.h"
-#include "compiler/symbol_table/constructor/symbol_table_constructor.h"
-#include "compiler/semantic_analyzer/semantic_analyzer.h"
-#include "compiler/code_generator/code_generator.h"
+#include "symbol_table_constructor.h"
+#include "semantic_analyzer.h"
+#include "code_generator.h"
 
-char *state_to_token_path = "files/lexer_files/id_to_token_type.txt";
-char *edges_path = "files/lexer_files/edges.txt";
-char *ac_retract_path = "files/lexer_files/accept_retract_other.txt";
-char *state_to_error = "files/lexer_files/state_to_error.txt";
+char *state_to_token_path = "id_to_token_type.txt";
+char *edges_path = "edges.txt";
+char *ac_retract_path = "accept_retract_other.txt";
+char *state_to_error = "state_to_error.txt";
 
 static void driver(char *src, char *asm_file);
 
@@ -83,6 +88,7 @@ static void driver(char *src, char *asm_file) {
             }
             case 7: {
                 handle_array_printing(src);
+                continue;
             }
             case 8: {
                 handle_error_reporting_and_time_request(src);
@@ -125,7 +131,7 @@ static void print_menu() {
 }
 
 static void handle_lexer_request(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -138,7 +144,7 @@ static void handle_lexer_request(char *src) {
 }
 
 static void handle_parser_request(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -152,7 +158,7 @@ static void handle_parser_request(char *src) {
 }
 
 static void handle_ast_request(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -164,8 +170,6 @@ static void handle_ast_request(char *src) {
     ParseTree *parse_tree = construct_parse_tree(parser);
     ProgramNode *program_node_root = parse_tree->got_syntax_error ? NULL : parse_tree->program_node;
     if (program_node_root != NULL) {
-        construct_symbol_table(program_node_root);
-        perform_semantic_analysis(program_node_root, program_node_root->global_symbol_table);
         puts("***************************Printing AST: Traversal Order: Preorder***************************");
         print_ast_node((const ASTNode *) program_node_root, 0);
     } else {
@@ -174,7 +178,7 @@ static void handle_ast_request(char *src) {
 }
 
 static void handle_ast_compression_info_request(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     int buffer_size = 1024;
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
@@ -197,7 +201,7 @@ static void handle_ast_compression_info_request(char *src) {
 }
 
 static void handle_print_symbol_table(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -219,7 +223,7 @@ static void handle_print_symbol_table(char *src) {
 }
 
 static void handle_activation_record_printing(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -240,7 +244,7 @@ static void handle_activation_record_printing(char *src) {
             if (symbol_table_entry == NULL) continue;
             SymbolTable *module_symbol_table = symbol_table_entry->type_descriptor.function_type.module_symbol_table;
             SymbolTable *function_entry_symbol_table =
-                    symbol_table_entry->type_descriptor.function_type.function_entry_symbol_table;
+                    symbol_table_entry->type_descriptor.function_type.function_scope_symbol_table;
             printf("%s:%d\n", symbol_table_entry->name, module_symbol_table->total_data_size +
                                                         function_entry_symbol_table->total_data_size);
         }
@@ -251,7 +255,7 @@ static void handle_activation_record_printing(char *src) {
 }
 
 static void handle_array_printing(char *src) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -275,7 +279,7 @@ static void handle_array_printing(char *src) {
 
 static void handle_error_reporting_and_time_request(char *src) {
     clock_t begin = clock();
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,
@@ -301,7 +305,7 @@ static void handle_error_reporting_and_time_request(char *src) {
 }
 
 static void handle_code_generation_request(char *src, char *asm_file) {
-    const Grammar *g = get_initialized_grammar("/Users/wint/code/compiler/files/grammar_files/productions.txt");
+    const Grammar *g = get_initialized_grammar("./productions.txt");
     Parser *parser = get_initialized_parser(g);
     Lexer *lexer = get_initialized_lexer_for_parser(parser, src, state_to_token_path, edges_path,
                                                     ac_retract_path,

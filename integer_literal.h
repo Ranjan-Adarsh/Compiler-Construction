@@ -1,0 +1,13 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_INTEGER_LITERAL_H
+#define COMPILER_INTEGER_LITERAL_H
+
+#include "ast.h"
+
+IntegerLiteralNode *create_integer_literal_node();
+
+#endif //COMPILER_INTEGER_LITERAL_H

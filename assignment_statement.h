@@ -1,0 +1,13 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_ASSIGNMENT_STATEMENT_H
+#define COMPILER_ASSIGNMENT_STATEMENT_H
+
+#include "ast.h"
+
+AssignmentStatementNode *create_assignment_statement_node();
+
+#endif //COMPILER_ASSIGNMENT_STATEMENT_H

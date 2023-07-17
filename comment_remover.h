@@ -1,0 +1,11 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_COMMENT_REMOVER_H
+#define COMPILER_COMMENT_REMOVER_H
+
+void remove_comments_from_source_code(FILE *source, FILE *destination);
+
+#endif //COMPILER_COMMENT_REMOVER_H

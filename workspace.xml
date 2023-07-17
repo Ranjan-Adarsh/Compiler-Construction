@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="compiler" targetName="exec1" />
+      <config projectName="compiler" targetName="main2.c" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9d3f5fb0-1870-4ae9-9038-efffab6919c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/files/testcases/test_code_gen/t38.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ast_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ast_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code" beforeDir="false" afterPath="$PROJECT_DIR$/code" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code.asm" beforeDir="false" afterPath="$PROJECT_DIR$/code.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/code_generator/code_generator.c" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/code_generator/code_generator.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/symbol_table/constructor/symbol_table_constructor.c" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/symbol_table/constructor/symbol_table_constructor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/symbol_table/interface/symbol_table.h" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/symbol_table/interface/symbol_table.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/testcases/test_code_gen/t37.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/testcases/test_code_gen/t37.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.c" beforeDir="false" afterPath="$PROJECT_DIR$/main2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/parser_log.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.4" />
+  </component>
+  <component name="ProjectId" id="2OKuOu6aUaVvqcUD08IyXgld9l6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.exec1">
+    <configuration name="exec1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="compiler" TARGET_NAME="exec1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="compiler" RUN_TARGET_NAME="exec1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main2.c" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/files/testcases/Code_Generation_testcases/c1d.txt code.asm" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="compiler" TARGET_NAME="main2.c" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="compiler" RUN_TARGET_NAME="main2.c">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.exec1" />
+      <item itemvalue="CMake Application.main2.c" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d3f5fb0-1870-4ae9-9038-efffab6919c2" name="Changes" comment="" />
+      <created>1681321565532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681321565532</updated>
+      <workItem from="1681321567032" duration="6192000" />
+      <workItem from="1681327773193" duration="20333000" />
+      <workItem from="1681379701969" duration="9464000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler/code_generator/code_generator.c</url>
+          <line>259</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,4 +1,31 @@
-all:
-	nasm -f macho64 $(source).asm -DDARWIN
-	ld $(source).o -o $(source) -demangle -dynamic -macosx_version_min 11.0 -L/usr/local/lib -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -lSystem -no_pie
-	rm $(source).o
+CC = gcc
+CFLAGS = -Wall
+
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+DEP = $(SRC:.c=.d)
+
+TARGET = compiler
+
+.PHONY: all clean
+
+all: $(TARGET) clean
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+
+-include $(DEP)
+
+clean:
+	rm -f $(OBJ) $(DEP)
+
+# nasm:
+# 	nasm -felf64 code.asm 
+# 	gcc -no-pie code.o -o asmfile -nostdlib
+# 	 ./asmfile
+nasm:
+	nasm -f elf64 -g code.asm -o code.o
+	gcc -no-pie -m64 code.o -o code

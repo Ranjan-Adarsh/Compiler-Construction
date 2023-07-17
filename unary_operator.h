@@ -1,0 +1,13 @@
+/**
+MANAF - 2019B3A70351P
+ADARSH - 2019B3A70443P
+NISHANT - 2019B3A70381P
+**/
+#ifndef COMPILER_UNARY_OPERATOR_H
+#define COMPILER_UNARY_OPERATOR_H
+
+#include "ast.h"
+
+UnaryOperatorNode *create_unary_operator_node();
+
+#endif //COMPILER_UNARY_OPERATOR_H
